@@ -85,7 +85,6 @@ PACKAGES="$PACKAGES luci-proto-wireguard"
 PACKAGES="$PACKAGES luci-i18n-zerotier-zh-cn"
 # 增加***
 PACKAGES="$PACKAGES luci-theme-bootstrap"
-PACKAGES="$PACKAGES luci-theme-bootstrap-mod"
 PACKAGES="$PACKAGES luci-theme-argon"
 PACKAGES="$PACKAGES luci-app-argon-config"
 PACKAGES="$PACKAGES luci-i18n-argon-config-zh-cn"
