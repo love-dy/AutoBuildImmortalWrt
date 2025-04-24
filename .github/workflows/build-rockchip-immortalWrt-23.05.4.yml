@@ -72,6 +72,12 @@ jobs:
             fi
           fi
 
+      - name: Initialization Values
+        run: |
+          export WRT_DATE=$(TZ=UTC-8 date +"%y.%m.%d_%H.%M.%S")
+
+          echo "WRT_DATE=$WRT_DATE" >> $GITHUB_ENV
+
       - name: Building Rockchip ImmortalWrt
         run: |
           profiles="${{ github.event.inputs.profile }}"
@@ -108,7 +114,7 @@ jobs:
         uses: softprops/action-gh-release@v2.2.1
         with:
           tag_name: Autobuild-23.05.4
-          name: ImmortWrt-Rockchip
+          name: ImmortWrt-Rockchip_${{env.WRT_DATE}}
           body_path: ${{ github.workspace }}/info.md
           files: |
             ${{ github.workspace }}/*.img.gz
