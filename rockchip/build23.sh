@@ -71,10 +71,6 @@ if [ "$INCLUDE_DOCKER" = "yes" ]; then
     echo "Adding package: luci-i18n-dockerman-zh-cn"
 fi
 
-# ======== shell/custom-packages.sh =======
-# 合并imm仓库以外的第三方插件
-PACKAGES="$PACKAGES $CUSTOM_PACKAGES"
-
 # 增加***
 PACKAGES="$PACKAGES kmod-usb-core"
 PACKAGES="$PACKAGES kmod-usb-net"
@@ -132,6 +128,10 @@ PACKAGES="$PACKAGES luci-i18n-cpufreq-zh-cn"
 PACKAGES="$PACKAGES wpad-openssl"
 PACKAGES="$PACKAGES kmod-mt7921e"
 PACKAGES="$PACKAGES kmod-mt7921-firmware"
+
+# ======== shell/custom-packages.sh =======
+# 合并imm仓库以外的第三方插件
+PACKAGES="$PACKAGES $CUSTOM_PACKAGES"
 
 # 若构建openclash 则添加内核
 if echo "$PACKAGES" | grep -q "luci-app-openclash"; then
