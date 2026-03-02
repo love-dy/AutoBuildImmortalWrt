@@ -71,7 +71,6 @@ if [ "$INCLUDE_DOCKER" = "yes" ]; then
 fi
 # 文件管理器
 # PACKAGES="$PACKAGES luci-i18n-filemanager-zh-cn"
-# ======== shell/custom-packages.sh =======
 
 # 增加***
 PACKAGES="$PACKAGES kmod-usb-core"
@@ -131,6 +130,7 @@ PACKAGES="$PACKAGES wpad-openssl"
 PACKAGES="$PACKAGES kmod-mt7921e"
 PACKAGES="$PACKAGES kmod-mt7921-firmware"
 
+# ======== shell/custom-packages.sh =======
 # 合并imm仓库以外的第三方插件
 PACKAGES="$PACKAGES $CUSTOM_PACKAGES"
 
